@@ -3,7 +3,12 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["standard", "prettier", "prettier/react"],
+  "extends": [
+    "standard",
+    "prettier",
+    "prettier/react",
+    "plugin:react/recommended"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
