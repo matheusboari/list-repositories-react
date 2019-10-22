@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import { Container, Form, SubmitButton, List } from './styles';
+import Container from '../../components/Container';
+
+import { Form, SubmitButton, List } from './styles';
 
 export default class Main extends Component {
   state = {
     newRepo: '',
     repositories: [],
-    loading: false
+    loading: false,
   };
 
   // Carregar os dados do localStorage
@@ -44,13 +46,13 @@ export default class Main extends Component {
     const response = await api.get(`/repos/${newRepo}`);
 
     const data = {
-      name: response.data.full_name
+      name: response.data.full_name,
     };
 
     this.setState({
       repositories: [...repositories, data],
       newRepo: '',
-      loading: false
+      loading: false,
     });
   };
 
